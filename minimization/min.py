@@ -1,3 +1,8 @@
+# Christiano Braga
+# Nov. 2020
+# Implements the minimization algorithm for finite automata.
+# The automaton must be deterministic and its transition function must be total.
+
 import pandas as pd
 from tabulate import tabulate
 import pprint
