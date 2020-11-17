@@ -1,7 +1,14 @@
-# Christiano Braga
-# Nov. 2020
+# Christiano Braga Nov. 2020
 # Implements the minimization algorithm for finite automata.
-# The automaton must be deterministic and its transition function must be total.
+
+# The automaton must be deterministic and its transition function must
+# be total.  The transition function is a dictionary whose items are
+# inndexed by states and valued by dictionaries indexed by symbols of
+# the alphabet whose values are states.  States are labeled by
+# strings. The set of states is implemented as a list of strings, and
+# so is the set of final states.
+
+# The triangular matrix of potential (non)equivalent states is implemented as a list of state pairs.
 
 import pandas as pd
 from tabulate import tabulate
