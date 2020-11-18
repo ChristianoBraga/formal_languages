@@ -5,9 +5,10 @@
 # productions that produce the empty word, (iii) removing productions
 # that replace variables by variables.
 
-# A grammar is represented by a dictionary where each item is a set of
-# productions with the same LHS. The key is the LHS and the value is a
-# list whose elements are each RHS of the given LHS.
+# The productios of a grammar are represented as a dictionary where
+# each item is a set of RHS productions with the same LHS. The key is the
+# LHS and the value is a list, whose elements are each RHS of the given
+# LHS in the production set.
 
 import pprint
 import copy
