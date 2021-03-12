@@ -152,34 +152,34 @@ if __name__ == "__main__":
     # for e in trace2:
     #     print(e)
     
-    states3 = ["A", "B", "C", "D"]
-    state_pairs3 = make_state_pairs(states3)
-    initial = "A"
-    final3 = ["D"]
-    delta3 = {
-        "A" : {0 : "B", 1 : "A"},
-        "B" : {0 : "B", 1 : "C"},
-        "C" : {0 : "D", 1 : "A"},
-        "D" : {0 : "B", 1 : "C"}
-    }
-    sigma3 = {0, 1}
-    equiv_states3 = [True] * len(state_pairs3)
-    trace3 = min(sigma3, delta3, state_pairs3, equiv_states3, final3)
-    l3 = [p for i, p in enumerate(state_pairs3) if equiv_states3[i] == True]
-    pp = pprint.PrettyPrinter()    
-    pp.pprint(l3)
-    print("2020.1 - Avaliação Minimização AFD - Questão 1")
-    for e in trace3:
-        print(e)
+    # states3 = ["A", "B", "C", "D"]
+    # state_pairs3 = make_state_pairs(states3)
+    # initial = "A"
+    # final3 = ["D"]
+    # delta3 = {
+    #     "A" : {0 : "B", 1 : "A"},
+    #     "B" : {0 : "B", 1 : "C"},
+    #     "C" : {0 : "D", 1 : "A"},
+    #     "D" : {0 : "B", 1 : "C"}
+    # }
+    # sigma3 = {0, 1}
+    # equiv_states3 = [True] * len(state_pairs3)
+    # trace3 = min(sigma3, delta3, state_pairs3, equiv_states3, final3)
+    # l3 = [p for i, p in enumerate(state_pairs3) if equiv_states3[i] == True]
+    # pp = pprint.PrettyPrinter()    
+    # pp.pprint(l3)
+    # print("2020.1 - Avaliação Minimização AFD - Questão 1")
+    # for e in trace3:
+    #     print(e)
 
-    G = Digraph(format='png')
-    G.node("_q0", shape="point")    
-    G.edge("_q0", "A")
-    G.node("D", shape="doublecircle")
-    for src in delta3.keys():
-        for sym in sigma3:
-            G.edge(src, delta3[src][sym], label=str(sym))
-    G.render("questao1.png")
+    # G = Digraph(format='png')
+    # G.node("_q0", shape="point")    
+    # G.edge("_q0", "A")
+    # G.node("D", shape="doublecircle")
+    # for src in delta3.keys():
+    #     for sym in sigma3:
+    #         G.edge(src, delta3[src][sym], label=str(sym))
+    # G.render("questao1")
     
     states4 = ["A", "B", "C", "D", "E", "F", "G", "H"]
     state_pairs4 = make_state_pairs(states4)
@@ -209,11 +209,11 @@ if __name__ == "__main__":
     orig_graph.node("B", shape="doublecircle")
     orig_graph.node("E", shape="doublecircle")
     orig_graph.edge("_q0", "A")
-    orig_graph.render("questao2-aut.png")
     for src in delta4.keys():
         for sym in sigma4:
             orig_graph.edge(src, delta4[src][sym], label=str(sym))
+    orig_graph.render("questao2-aut")
         
     min_graph = make_digraph(sigma4, initial4, make_min_afd(states4, equiv_states4, delta4), final4)
-    min_graph.render("questao2-aut-min.png")
+    min_graph.render("questao2-aut-min")
     
